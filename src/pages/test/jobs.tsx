@@ -87,7 +87,9 @@ export async function getServerSideProps() {
 
     const fetchedJobs = response.data.jobs
 
-    const companies = [...new Set(fetchedJobs.map((job) => job.companyName))]
+    const companies = [
+      ...new Set(fetchedJobs.map((job: Job) => job.companyName)),
+    ]
 
     return {
       props: {
