@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import moment from 'moment'
 
 import { Header } from '@/components/Header'
 import { JobComponent } from '@/components/Job'
@@ -47,10 +46,6 @@ export default function App({
         return false
       })
     }
-
-    const text = '2d ago'
-    const converted = moment(text).toDate()
-    console.log('converted', converted)
 
     setFilteredJobs(filteredJobs)
   }, [selectedCompany, fetchedJobs, showLast7Days])
